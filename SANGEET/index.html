@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Music Player </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="cssformusic.css">
+		<!-- <script type="text/javascript" src="Playing with Css\scriptformusic.js"></script> -->
+		<!-- jQuery library -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+		<!-- Popper JS -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
+		<!-- Latest compiled JavaScript -->
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+	<div class="center">
+		<div class="u_tabs justify-content-between align-items-baseline sticky-top">
+			<i class="fa fa-arrow-left back" id="back" onclick="showartist()">
+		</i>
+			<h5 class="name"> SANGEET </h5>
+			<i class="fa fa-bars" id="hide"> </i>
+		</div>
+		<div class="current_song">
+		<div class="song">
+			<img src="music_photos/1.jpeg">
+		</div>
+		<div class="progress_bar justify-content-around">
+			<div onclick="repeat()">
+				<i class="fas fa-redo-alt"></i>
+			</div>
+			<div id="seek-bar">
+				<div id="fill"></div>
+				<div id="handle"></div>
+			</div>
+			<div onclick="shuffle()">
+				<i class="fas fa-random"></i>
+			</div>
+		</div>
+		<div class="song_detail">
+			<p class="song_name" id="songTitle">Something just like this</p>
+			<p class="value_aa">0</p>
+			<p class="singer" id="singer"> Coldplay </p>
+		</div>
+		<div class="btns justify-content-between">
+			<i class="fa fa-angle-double-left" onclick="pre()"></i>
+			<i class="fas fa-play" id="play" onclick="playOrpausesong()"></i>
+			<i class="fa fa-angle-double-right" onclick="next()"></i>
+		</div>
+		<hr class="hrs">
+		<div class="other_music">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(0);">
+				<div class="img">
+				<p class="value getvalue">0</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(1);">
+				<div class="img">
+				<p class="value getvalue">1</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(2);">
+				<div class="img">
+				<p class="value getvalue">2</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(3);">
+				<div class="img">
+				<p class="value getvalue">3</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(4);">
+				<div class="img">
+				<p class="value getvalue">4</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="playsong(5);">
+				<div class="img">
+				<p class="value getvalue">5</p>
+				<img src="" class="setimg1"></div>
+				<p class="settitle1"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+		</div>
+	</div>
+
+		<div class="tabs_b sticky-top d-flex justify-content-between">
+			<i class="fa fa-home" onclick="showhome()"></i>
+			<i class="fa fa-music activet" onclick="showsong()"></i>
+			<i class="fa fa-user" onclick="showartist()"></i>
+			<!-- <i class="fa fa-cog"></i> -->
+		</div>
+		<div class="home_tab">
+
+		<div class="all_songs">
+			<div class="search_box sticky-top">
+			<input type="text" name="user" class="search_bar" placeholder="Search..." autocomplete="off">
+			<i class="fas fa-times" onclick="hidesearch()"></i>
+		</div>
+			<div class="icon sticky-top">
+				<i class="fa fa-search" onclick="showsearch()"></i>
+			</div>
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(0);">
+				<div class="img">
+					<p class="value getvalue">0</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(1);">
+				<div class="img">
+					<p class="value getvalue">1</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(2);">
+				<div class="img">
+					<p class="value getvalue">2</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(3);">
+				<div class="img">
+					<p class="value getvalue">3</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(4);">
+				<div class="img">
+					<p class="value getvalue">4</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(5);">
+				<div class="img">
+					<p class="value getvalue">5</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+			<!-- new songs -->
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(6);">
+				<div class="img">
+					<p class="value getvalue">6</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(7);">
+				<div class="img">
+					<p class="value getvalue">7</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(8);">
+				<div class="img">
+					<p class="value getvalue">8</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(9);">
+				<div class="img">
+					<p class="value getvalue">9</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(10);">
+				<div class="img">
+					<p class="value getvalue">10</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(11);">
+				<div class="img">
+					<p class="value getvalue">11</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(12);">
+				<div class="img">
+					<p class="value getvalue">12</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(13);">
+				<div class="img">
+					<p class="value getvalue">13</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(14);">
+				<div class="img">
+					<p class="value getvalue">14</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(15);">
+				<div class="img">
+					<p class="value getvalue">15</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(16);">
+				<div class="img">
+					<p class="value getvalue">16</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(17);">
+				<div class="img">
+					<p class="value getvalue">17</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(18);">
+				<div class="img setimgs">
+					<p class="value getvalue">18</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(19);">
+				<div class="img setimgs">
+					<p class="value getvalue">19</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(20);">
+				<div class="img setimgs">
+					<p class="value getvalue">20</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(21)">
+				<div class="img setimgs">
+					<p class="value getvalue">21</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(22)">
+				<div class="img setimgs">
+					<p class="value getvalue">22</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(23)">
+				<div class="img setimgs">
+					<p class="value getvalue">23</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(24)">
+				<div class="img setimgs">
+					<p class="value getvalue">24</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(25)">
+				<div class="img setimgs">
+					<p class="value getvalue">25</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(26)">
+				<div class="img setimgs">
+					<p class="value getvalue">26</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(27)">
+				<div class="img setimgs">
+					<p class="value getvalue">27</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(28)">
+				<div class="img setimgs">
+					<p class="value getvalue">28</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(29)">
+				<div class="img setimgs">
+					<p class="value getvalue">29</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(30)">
+				<div class="img setimgs">
+					<p class="value getvalue">30</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(31)">
+				<div class="img setimgs">
+					<p class="value getvalue">31</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(32)">
+				<div class="img setimgs">
+					<p class="value getvalue">32</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(33)">
+				<div class="img setimgs">
+					<p class="value getvalue">33</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(34)">
+				<div class="img setimgs">
+					<p class="value getvalue">34</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(35)">
+				<div class="img setimgs">
+					<p class="value getvalue">35</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(36)">
+				<div class="img setimgs">
+					<p class="value getvalue">36</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(37)">
+				<div class="img setimgs">
+					<p class="value getvalue">37</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(38)">
+				<div class="img setimgs">
+					<p class="value getvalue">38</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(39)">
+				<div class="img setimgs">
+					<p class="value getvalue">39</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(40)">
+				<div class="img setimgs">
+					<p class="value getvalue">40</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(41)">
+				<div class="img setimgs">
+					<p class="value getvalue">41</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(42)">
+				<div class="img setimgs">
+					<p class="value getvalue">42</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(43);">
+				<div class="img setimgs">
+					<p class="value getvalue">43</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<div class="cards cards_all align-items-center justify-content-between" onclick="showsong();playsong(44);">
+				<div class="img setimgs">
+					<p class="value getvalue">44</p>
+				<img src="" class="setimg"></div>
+				<p class="settitle"> </p>
+				<i class="fa fa-play"></i>
+			</div>
+
+			<!-- end songs -->
+		</div>
+	</div>
+	<!-- Artist tab start -->
+	<div class="artist_tab">
+		<!-- <div class="head"><h5>Artists</h5></div> -->
+		<div class="artists" onclick="artist_songs(3)">
+			<img src="music_photos/Artist/Zayn malik.jpg">
+			<p class="artist_name">Zayn Malik</p>
+		</div>
+
+		<div class="artists" onclick="artist_songs(1)">
+			<img src="music_photos/Artist/taylor swift.png">
+			<p class="artist_name">Taylor Swift</p>
+		</div>
+
+		<div class="artists" onclick="artist_songs(2)">
+			<img src="music_photos/Artist/The chainsmokers.jpg">
+			<p class="artist_name">Chainsmokers</p>
+		</div>
+
+		<div class="artists" onclick="artist_songs(0)">
+			<img src="music_photos/Artist/one direction.jpg">
+			<p class="artist_name">One Direction</p>
+		</div>
+
+
+
+	</div>
+	<!-- Artist tab end -->
+	
+	<!-- One Direction songs -->
+
+	<div class="artist_songs">
+		<!-- <div class="justify-content-between sticky-top"> -->
+		
+		<!-- </div> -->
+		<hr class="hr">
+		<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(6);">
+				<div class="img">
+				<p class="value1 getvalue">6</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(7);">
+				<div class="img">
+				<p class="value1 getvalue">7</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(8);">
+				<div class="img">
+				<p class="value1 getvalue">8</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(23);">
+				<div class="img">
+				<p class="value1 getvalue">23</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(24);">
+				<div class="img">
+				<p class="value1 getvalue">24</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(25);">
+				<div class="img">
+				<p class="value1 getvalue">25</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+			
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(26);">
+				<div class="img">
+				<p class="value1 getvalue">26</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(27);">
+				<div class="img">
+				<p class="value1 getvalue">27</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(28);">
+				<div class="img">
+				<p class="value1 getvalue">28</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(29);">
+				<div class="img">
+				<p class="value1 getvalue">29</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(30);">
+				<div class="img">
+				<p class="value1 getvalue">30</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(31);">
+				<div class="img">
+				<p class="value1 getvalue">31</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(32);">
+				<div class="img">
+				<p class="value1 getvalue">32</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+	</div>
+	
+	<div class="artist_songs">
+		<hr class="hr">
+		<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(13);">
+				<div class="img">
+				<p class="value1 getvalue">13</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(18);">
+				<div class="img">
+				<p class="value1 getvalue">18</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(19);">
+				<div class="img">
+				<p class="value1 getvalue">19</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(20);">
+				<div class="img">
+				<p class="value1 getvalue">20</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(21);">
+				<div class="img">
+				<p class="value1 getvalue">21</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(22);">
+				<div class="img">
+				<p class="value1 getvalue">22</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+	</div>
+
+	<div class="artist_songs">
+		<hr class="hr">
+		<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(0);">
+				<div class="img">
+				<p class="value1 getvalue">0</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(33);">
+				<div class="img">
+				<p class="value1 getvalue">33</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(34);">
+				<div class="img">
+				<p class="value1 getvalue">34</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(35);">
+				<div class="img">
+				<p class="value1 getvalue">35</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(36);">
+				<div class="img">
+				<p class="value1 getvalue">36</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(37);">
+				<div class="img">
+				<p class="value1 getvalue">37</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+	</div>
+
+	<div class="artist_songs">
+		<hr class="hr">
+		<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(1);">
+				<div class="img">
+				<p class="value1 getvalue">1</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(5);">
+				<div class="img">
+				<p class="value1 getvalue">5</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+
+			<div class="cards align-items-center justify-content-between" onclick="showsong();playsong(18);">
+				<div class="img">
+				<p class="value1 getvalue">18</p>
+				<img src="" class="a_setimg"></div>
+				<p class="a_settitle"> </p>
+				<i class="fa fa-play" ></i>
+			</div>
+			<hr class="hr">
+	</div>
+
+	</div> <!-- center tab end -->
+	<!-- Add all the data -->
+	<script src="jquery-3.3.1.min.js" ></script>
+	<script>
+		
+		// first create an arry of song that you want to play...
+
+		//  C:/Entertainment/fav_songs/Something_Just_Like_This_-_Coldplay___Chainsmokers_-_Luciana_Zogbi_Cover.mp3 C:/Ringtones/Hold up.mp3
+
+
+		var songs = ["music/The_Chainsmokers___Coldplay_-_Something_Just_Like_This_(Lyric).mp3",
+			"music/ZAYN  Sia  Dusk Till Dawn.mp3",
+			"music/Avicii  The Nights.mp3",
+			"music/high on life.mp3",
+			"music/without me.mp3",
+			"music/there you are.mp3",
+			"music/Perfect.mp3",
+			"music/One_Direction_-_Steal_My_Girl.mp3",
+			"music/One_Direction_-_Story_of_My_Life(1).mp3",
+			"music/Passenger___Let_Her_Go_(Official_Video).mp3",
+			"music/Rachel_Platten_-_Fight_Song_(Official_Video).mp3",
+			"music/Sasha_Sloan_-_Older_(Lyric_Video).mp3",
+			"music/Taio_Cruz_-_Break_Your_Heart_ft._Ludacris.mp3",
+			"music/Taylor_Swift_-_Love_Story.mp3",
+			"music/The_Chainsmokers_-_Don_t_Let_Me_Down_ft._Daya.mp3",
+			"music/Wiz_Khalifa_-_See_You_Again_ft._Charlie_Puth_[Official_Video]_Furious_7_Soundtra.mp3",
+			"music/Zedd,_Grey_-_The_Middle_(Lyrics)_ft._Maren_Morris.mp3",
+			"music/Zara Zara Behekta Hai.mp3",
+			"music/ZAYN,_Taylor_Swift_-_I_Don’t_Wanna_Live_Forever_(Fifty_Shades_Darker).mp3",
+			"music/Taylor_Swift_-_We_Are_Never_Ever_Getting_Back_Together.mp3",
+			"music/Taylor_Swift_-_Look_What_You_Made_Me_Do.mp3",
+			"music/Taylor_Swift_-_Blank_Space.mp3","music/Taylor_Swift_-_Bad_Blood_ft._Kendrick_Lamar.mp3",
+			"music/One_Direction-_Best_Song_Ever_(lyrics___pics) - Copy.mp3",
+			"music/One_Direction_-_What_Makes_You_Beautiful_(Official_Video).mp3",
+			"music/One_Direction_-_One_Thing.mp3",'music/night changes.mp3',
+			"music/One_Direction_-_Live_While_We_re_Young.mp3",
+			"music/One_Direction_-_Kiss_You_Official-T4cdfRohhcg.mp3",
+			"music/One_Direction_-_History_(Official_Video).mp3",
+			"music/One_Direction_-_Gotta_Be_You.mp3",
+			"music/One_Direction_-_Drag_Me_Down_(Official_Video).mp3",
+			"music/One Direction - More Than This mp3.mp3",
+			"music/The_Chainsmokers_-_Sick_Boy.m4a",
+			"music/The_Chainsmokers_-_Paris_(Video).mp3",
+			"music/The_Chainsmokers_-_Closer_(Lyric)_ft._Halsey.mp3",
+			"music/The_Chainsmokers_-_All_We_Know_(Audio)_ft._Phoebe_Ryan.m4a",
+			"music/The_Chainsmokers,_Drew_Love_-_Somebody_(Official_Music__Video).mp3",
+			"music/Zayn_-_Allah_Duhai_Hai_(Cover).mp3",
+			"music/moved on.mp3",
+			"music/our way out.mp3",
+			"music/criminal.mp3",
+			"music/ek zindagi.mp3",
+			"music/shadow.mp3",
+			"music/where you wanna be.mp3"];
+
+		// now create an array of poster you want to use...
+
+
+		var poster = ["music_photos/1.jpeg","music_photos/2.jpeg","music_photos/5.jpeg","music_photos/4.jpeg","music_photos/3.jpeg","music_photos/6.jpeg","music_photos/perfect.jpg","music_photos/One_Direction_-_Steal_My_Girl.png","music_photos/Story_of_My_Life.png","music_photos/let her go.jpg","music_photos/fight song.jpg","music_photos/older.jpg","music_photos/break your heart.png","music_photos/love story.jpg","music_photos/don't let me down.jpg","music_photos/see you again.jpg","music_photos/the middle.png","music_photos/zara zara.jpg","music_photos/i don't wanna live forever.jpg","music_photos/back together.jpg","music_photos/me do.jpg","music_photos/blank space.jpg","music_photos/bad blood.jpg","music_photos/best song.jpg","music_photos/you beautiful.jpg","music_photos/one thing.jpg","music_photos/night changes.jpg","music_photos/we are young.jpg","music_photos/kiss you.jpg","music_photos/history.jpg","music_photos/gotta be you.jpg","music_photos/drag me down.jpg","music_photos/than this.jpg","music_photos/sick boy.jpg","music_photos/paris.jpg","music_photos/closer.jpg","music_photos/we know.jpg","music_photos/somebody.jpg","music_photos/duhai hai.jpg","music_photos/moved on.jpg","music_photos/our way out.jpg","music_photos/criminal.png","music_photos/ek zindagi.jpg","music_photos/shadow.jpg","music_photos/where you wanna be.jpg"];
+
+		var songTitle = document.getElementById("songTitle");
+		var singer_name = document.getElementById("singer");
+		var fillBar = document.getElementById("fill");
+
+		// now create an array of song names you want to use...
+
+		var song_names = ["Something just like this","Dusk Till Down","The Nights","High on Life","Without Me","There you are","Perfect","Steal my girl","Story of my life","Let her go","Fight song","Older","Break your heart","Love story","Don't let me down","See you again","The middle","Zara zara behekta hai","I don't wanna live forever","We are never ever getting back together","Look what you made me do","Blank space","Bad blood","Best song","What makes you beautiful","One thing","Night changes","Live while we're young","Kiss you","History","Gotta be you","Drag me down","More than this","Sick boy","Paris","Closer","We know","Somebody","Allah duhai hai","Moved on","Our way out","Criminal","Ek zindagi","Shadow","Where you wanna be"];
+		var singer_names = ["Coldplay","Zayn","Avicii","DJ Martin","Halsey","Zayn","One Direction","One Direction","One Direction","Passenger","Rachel Platten","Sasha Sloan","Taiz Cruz","Taylor Swift","The Chainsmokers","Wiz Khalifa","Zedd Grey","Omkar ft.Aditya Bharwaj","Zayn, Taylor Swift","Taylor Swift","Taylor Swift","Taylor Swift","Taylor Swift","One Direction","One Direction","One Direction","One Direction","One Direction","One Direction","One Direction","One Direction","One Direction","One Direction","The Chainsmokers","The Chainsmokers","The Chainsmokers","The Chainsmokers","The Chainsmokers","Zayn","Sense","Nico Collins","Britney Spears","Taniska Sanghvi","Triplo Max","R3HAB, Elena Temnikova"];
+
+		// now create a object of Audio class...
+
+		var song = new Audio();
+		var currentSong = 0;	// it point to the current song
+
+		// now i want to play the song when window or body is load....
+
+		function playSong(){
+			song.src = songs[currentSong];	// set the source of 0th song
+
+			songTitle.textContent = song_names[currentSong];	//set the title of song..
+			singer_name.textContent = singer_names[currentSong];
+					//set the singer name
+
+			song.play();	// play the song
+			$("#play").attr("class","fas fa-play");
+
+		}
+
+		// window.onload = playSong();	// it will call the function playSong when window is loaded...
+		playSong();
+		function playOrpausesong(){
+			if(song.paused){
+				song.play();
+				$("#play").attr("class","fa fa-pause");
+			}
+			else{
+				song.pause();
+				$("#play").attr("class","fas fa-play");
+			}
+
+		}
+
+		// var repeat_hide = document.getElementsByClassName('fa-redo-alt')[0];
+		// repeat_hide.style.visibility = 'hidden';
+
+		// song.onended = function(){
+		// 	repeat_hide.style.visibility = 'visible';
+		// }
+
+		// song.onloadstart = function(){
+		// 	repeat_hide.style.visibility = 'hidden';
+		// }
+
+		
+		
+		// ok now call the function on button click event...
+
+		// now access the seek bar...
+
+		song.addEventListener('timeupdate', function(){
+
+			var position = song.currentTime / song.duration;
+
+			fillBar.style.width = position * 100 + '%';
+			positions = position * 100;
+			// console.log(positions);
+			if(positions == 100){
+				$("#play").attr("class","fas fa-play");
+				// next();
+			}
+		});
+		
+		// now work on next button...
+
+		function next(){
+			currentSong++;
+			if(currentSong > 5){
+				currentSong = 0;
+			}
+			mainvalue.innerHTML = currentSong;
+			// console.log(mainvalue.innerHTML);
+			playSong();
+			$("#play").attr('class','fa fa-pause');
+			// now set the poster..
+			$(".song img").attr('src',poster[currentSong]);
+		}
+
+		// ok we need to call this function on button click...
+
+		// now for previous button...
+
+		function pre(){
+			currentSong--;
+			if(currentSong < 0){
+				currentSong = 5;
+			}
+			mainvalue.innerHTML = currentSong;
+			// console.log(mainvalue.innerHTML);
+			playSong();
+			$("#play").attr('class','fa fa-pause');
+			// now set the poster..
+			$(".song img").attr('src',poster[currentSong]);
+		}
+		var mainvalue = document.getElementsByClassName('value_aa')[0];
+		
+		function playsong(a){
+			
+			// var getvalue = document.getElementsByClassName('getvalue');
+			mainvalue.innerHTML = a;
+			// console.log(mainvalue.innerHTML);
+			song.src = songs[a];	// set the source of 0th song
+
+			songTitle.textContent = song_names[a];	//set the title of song..
+			singer_name.textContent = singer_names[a];
+
+					//set the singer name
+
+			song.play();	// play the song
+			$("#play").attr("class","fas fa-play");
+			$("#play").attr('class','fa fa-pause');
+			// now set the poster..
+			$(".song img").attr('src',poster[a]);
+			return mainvalue;
+		}
+
+		function repeat(){
+			var mainvalue = document.getElementsByClassName('value_aa')[0].innerHTML;
+			// var getvalue = document.getElementsByClassName('getvalue');
+			playsong(mainvalue);
+			// console.log(mainvalue);
+		}
+
+		function shuffle(){
+			var i = songs.length;
+				var j = Math.floor(Math.random() * 100);
+			// playsong(j);
+			if( j < i){
+			playsong(j);
+		}
+		else if((j>i) && (j<50)){
+		j = j - 12;
+		playsong(j);
+		}
+		else if((j>49) && (j<61)){
+		j = j - 32;
+		playsong(j);
+		}
+		else if((j>i) && (j<71)){
+		j = j - 42;
+		playsong(j);
+		}
+		else if((j>i) && (j<81)){
+		j = j - 57;
+		playsong(j);
+		}
+		else if((j>i) && (j<91)){
+		j = j - 72;
+		playsong(j);
+		}
+		else if((j>i) && (j<101)){
+		j = j - 78;
+		playsong(j);
+		}
+		}
+	
+	// <!-- End adding all the data -->
+
+	
+
+
+	// <script type="text/javascript">
+
+		var all_songs = document.getElementsByClassName('all_songs')[0];
+
+		var artist_tab = document.getElementsByClassName('artist_tab')[0];
+
+		var current_song = document.getElementsByClassName('current_song')[0];
+
+		var artist_song_tab = document.getElementsByClassName('artist_songs');
+
+		var artist_tab_length = artist_song_tab.length;
+
+		var setimg = document.getElementsByClassName('setimg');
+
+		settitle = document.getElementsByClassName('settitle');
+		var setimg1 = document.getElementsByClassName('setimg1');
+
+		settitle1 = document.getElementsByClassName('settitle1');
+
+		var a_setimg = document.getElementsByClassName('a_setimg');
+
+		a_settitle = document.getElementsByClassName('a_settitle');
+
+		var back_btn = document.getElementsByClassName('back');
+		var position = song.currentTime / song.duration;
+		positions = position * 100;
+
+		for(a=0;a<back_btn.length;a++){
+			back_btn[a].style.visibility = 'hidden';
+			// back_btn[a].style.transition = "all .4s";
+		}
+
+		for(var a=0;a<setimg.length;a++){
+		var imgset = setimg[a];
+		imgset.src = poster[a];
+		settitle[a].innerHTML = song_names[a];
+	}
+
+	for(var a=0;a<setimg1.length;a++){
+		var imgset1 = setimg1[a];
+		imgset1.src = poster[a];
+		settitle1[a].innerHTML = song_names[a];
+	}
+		
+	var value = document.getElementsByClassName('value1');
+	// var value = document.get
+	// console.log(value.length);
+	// values = value[1].innerHTML;
+	// console.log(values);
+		for(var a = 0;a<value.length;a++){
+		var values = value[a].innerHTML;
+		// var a_imgset = a_setimg[a];
+		a_setimg[a].src = poster[values];
+		// a_imgset.src = poster[values];
+		a_settitle[a].innerHTML = song_names[values];
+		}
+		
+		// $(document).ready(function(){
+			// $(".setimgs img").attr('src',poster[17]);
+		// });
+		
+		// console.log(length);
+		all_songs.style.marginLeft = '-310px';
+		artist_tab.style.marginLeft = '310px';
+		for(var a=0;a<artist_tab_length;a++){
+		artist_song_tab[a].style.marginLeft = '310px';
+		}
+
+		function showhome(){
+			for(var a=0;a<artist_tab_length;a++){
+		artist_song_tab[a].style.marginLeft = '310px';
+		}
+			all_songs.style.marginLeft = '0px';
+			current_song.style.marginLeft = '310px';
+			artist_tab.style.marginLeft = '620px';
+			back_btn[0].style.visibility = 'hidden';
+			// od_songs.style.marginLeft = '930px';
+			$(document).on("click", ".cards .fa-play", function(){
+		$('.tabs_b .fa-home').addClass('activet').siblings().removeClass('activet');
+		});
+		}
+
+		function showsong(){
+			for(var a=0;a<artist_tab_length;a++){
+		artist_song_tab[a].style.marginLeft = '310px';
+		}
+			all_songs.style.marginLeft = '-310px';
+			current_song.style.marginLeft = '0px';
+			artist_tab.style.marginLeft = '310px';
+			back_btn[0].style.visibility = 'hidden';
+			$(document).on("click", ".cards", function(){
+		$('.tabs_b .fa-music').addClass('activet').siblings().removeClass('activet');
+		});
+		}
+
+		function showartist(){
+			for(var a=0;a<artist_tab_length;a++){
+		artist_song_tab[a].style.marginLeft = '310px';
+		}
+			all_songs.style.marginLeft = '-620px';
+			current_song.style.marginLeft = '-310px';
+			artist_tab.style.marginLeft = '0px';
+			back_btn[0].style.visibility = 'hidden';
+			
+		}
+
+		function artist_songs(a){
+			all_songs.style.marginLeft = '-930px';
+			current_song.style.marginLeft = '-620px';
+			artist_tab.style.marginLeft = '-310px';
+			artist_song_tab[a].style.marginLeft = '0px';
+			back_btn[0].style.visibility = 'visible';
+		}
+
+	</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+ $(".all_songs").scroll(function(){
+ if($(this).scrollTop() > 20){
+ 	$(".fa-search").addClass('solid');
+ 	$(".search_box").addClass('solid');
+ }
+ else{
+ 	$(".fa-search").removeClass('solid');
+ 	$(".search_box").removeClass('solid');
+ }	
+ });	
+ });
+	</script>
+	<script type="text/javascript">
+		$(document).on("click", ".tabs_b i", function(){
+		$(this).addClass('activet').siblings().removeClass('activet');
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).on("click", ".other_music .cards", function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		});
+	</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.fa-bars').click(function(){
+				$('.content').slideToggle();
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		// function showasong(){
+		$('body').on('change , keyup' , '.search_bar', function(){
+		var input, filter, txtValue, i, settitle, a, cards;
+		 settitle = document.getElementsByClassName('settitle');
+		input = document.getElementsByClassName('search_bar')[0];
+		cards = document.getElementsByClassName('cards_all');
+
+		// for(var b = 0; b<cards.length; b++){
+		// 	cards[b].style.transition = 'all 2s ease-in-out';
+		// }
+
+		var filter = input.value.toUpperCase();
+		for(i = 0; i< settitle.length; i++){
+			a = settitle[i];
+			txtValue = a.innerText;
+			if(txtValue.toUpperCase().indexOf(filter) > -1){
+				cards[i].style.display = "";
+			}
+			else{
+				cards[i].style.display = "none";
+			}
+		}
+		});
+	// }
+	</script>
+
+	<script type="text/javascript">
+		var search_box = document.getElementsByClassName('search_box')[0];
+		var search_bar = document.getElementsByClassName('search_bar')[0];
+		var search_icon = document.getElementsByClassName('fa-search')[0];
+		search_box.style.transition = 'all .4s ease-in-out';
+		search_icon.style.transition = 'all .4s ease-in-out';
+		search_box.style.display = 'none';
+		function showsearch(){
+			search_box.style.display = 'block';
+			search_icon.style.display = 'none';
+		}
+		function hidesearch(){
+			cards = document.getElementsByClassName('cards_all');
+			for(var i = 0; i<cards.length; i++){
+				cards[i].style.display = '';
+			}
+			search_bar.value = "";
+			search_box.style.display = 'none';
+			search_icon.style.display = 'inline-block';
+		}
+	</script>
+
+</body>
+</html>
