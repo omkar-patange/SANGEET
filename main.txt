@@ -1,1 +1,2 @@
 This is the main branch content by Leader.
+User2 added feature B.
