@@ -1,7 +1,3 @@
 This is the main branch content by Leader.
-<<<<<<< HEAD
-User2 added feature B.
-=======
-User1 added feature A.
->>>>>>> 057d31c (Added feature A by User1)
 Feature B added by coder2-demo.
+Feature A added by coder1-demo.

@@ -1,3 +1,2 @@
-This is the main branch content.
-User1 added feature A.
-User2 added feature B.
+This is the main branch content by Leader.
+Feature A added by coder1-demo.
